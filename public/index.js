@@ -28,8 +28,7 @@ ws.onclose = () => {
 ws.onmessage = response => {
   const json = JSON.parse(response.data);
   helloDiv.style.display = 'none';
-  divValue1.src = `./public/images/${images[json[0] - 1]}.png`;
-  divValue2.src = `./public/images/${images[json[1] - 1]}.png`;
+  setSrc(json[0], json[1]);
 };
 
 const rollTheDice = () => {
@@ -46,13 +45,12 @@ const rollTheDice = () => {
       1: getRandomArbitrary()
     };
 
-    setSrc(json[0], json[1]);
+    ws.send(JSON.stringify(json));
   }, 250);
 
 
   setTimeout(() => {
     clearInterval(timerId);
-    ws.send(JSON.stringify(json));
     rollBtn.removeAttribute('disabled');
     rollBtn.classList.remove('disabled');
   }, 2500);
