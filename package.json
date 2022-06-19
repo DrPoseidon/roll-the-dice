@@ -1,0 +1,16 @@
+{
+  "name": "roll-the-dice",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-ws": "^5.0.2",
+    "ws": "^8.8.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "nodemon": "^2.0.16"
+  }
+}
