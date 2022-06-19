@@ -1,4 +1,7 @@
-const ws = new WebSocket(`ws://${window.location.host}`);
+const port = '45.130.151.203:9000/';
+// const port = window.location.host;
+
+const ws = new WebSocket(`ws://${port}`);
 
 const divValue1 = document.querySelector('.value1');
 const divValue2 = document.querySelector('.value2');
