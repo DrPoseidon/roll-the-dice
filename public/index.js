@@ -1,4 +1,4 @@
-const ws = new WebSocket(`ws://localhost:3000`);
+const ws = new WebSocket(`ws://${window.location.host}`);
 
 const divValue1 = document.querySelector('.value1');
 const divValue2 = document.querySelector('.value2');
