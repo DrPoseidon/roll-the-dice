@@ -1,5 +1,4 @@
 const port = window.location.host;
-
 const ws = new WebSocket(`ws://${port}`);
 
 const divValue1 = document.querySelector('.value1');
@@ -27,6 +26,7 @@ ws.onclose = () => {
 
 ws.onmessage = response => {
   const json = JSON.parse(response.data);
+  dicesDiv.style.display = 'flex';
   helloDiv.style.display = 'none';
   setSrc(json[0], json[1]);
 };
